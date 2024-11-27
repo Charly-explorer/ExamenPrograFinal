@@ -1,5 +1,7 @@
 package Model.Inscripcion;
 
+import Model.Participantes.Participante;
+import Model.Taller.Taller;
 import java.util.Date;
 
 /**

@@ -4,18 +4,18 @@
  */
 package Model.Taller;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 /**
  *
  * @author Student
  */
-public class Taller {
-  private int id; 
-  private String nombre;
-  private LocalDate fecha;
-  private String lugar;
-  private int capacidad; 
+public class TallerDTO {
+  private final int id; 
+  private final String nombre;
+  private final Date fecha;
+  private final String lugar;
+  private final int capacidad; 
 
     public int getId() {
         return id;
@@ -25,7 +25,7 @@ public class Taller {
         return nombre;
     }
 
-    public LocalDate getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
@@ -37,7 +37,7 @@ public class Taller {
         return capacidad;
     }
 
-    public Taller(int id, String nombre, LocalDate fecha, String lugar, int capacidad) {
+    public TallerDTO(int id, String nombre, Date fecha, String lugar, int capacidad) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
