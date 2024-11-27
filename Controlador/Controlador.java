@@ -8,6 +8,6 @@ package Controlador;
  *
  * @author Student
  */
-public class NewClass {
+public class Controlador {
     
 }
