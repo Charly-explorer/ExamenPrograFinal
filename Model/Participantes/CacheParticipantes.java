@@ -12,31 +12,36 @@ import java.util.HashMap;
  *
  * @author Student
  */
-public class ListaParticipantes implements Dao<Participante>{
+public class CacheParticipantes implements Dao<Participante>{
     private HashMap<Integer,Participante> list;
 
     public HashMap<Integer, Participante> getList() {
         return list;
     }
 
-    public ListaParticipantes() {
+    public CacheParticipantes() {
         this.list = new HashMap<>();
     }
 
     @Override
     public boolean crear(Participante objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(objeto == null){
+            return false;
+        }
+        list.put(objeto.getCedula(),objeto);
+        return true;
     }
 
     @Override
     public Participante leer(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(objeto == null){
+            return null;
+        }
+        return list.get(Integer.parseInt(String.valueOf(objeto)));  
     }
 
     @Override
-    public ArrayList leerTodo(Object objeto) {
+    public ArrayList leerTodo() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
 }

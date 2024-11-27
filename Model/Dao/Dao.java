@@ -4,6 +4,7 @@
  */
 package Model.Dao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @author Student
  */
 public interface Dao<T> {
-    boolean crear(T objeto);
-    T leer(Object objeto);
-    ArrayList leerTodo();
+    boolean crear(T objeto) throws SQLException;
+    T leer(Object objeto)throws SQLException;
+    ArrayList leerTodo()throws SQLException;
 }
