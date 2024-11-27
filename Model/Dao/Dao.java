@@ -13,5 +13,5 @@ import java.util.ArrayList;
 public interface Dao<T> {
     boolean crear(T objeto);
     T leer(Object objeto);
-    ArrayList leerTodo(Object objeto);
+    ArrayList leerTodo();
 }
