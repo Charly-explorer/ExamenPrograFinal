@@ -1,0 +1,34 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inscripcionCreate`(IN `pTaller` INT, IN `pParticipante` INT, IN `pFecha` DATE, IN `pAsistecia` BOOLEAN)
+INSERT INTO inscripcion VALUES (pTaller,pParticipante,pFecha,pAsistecia)$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `participantesCreate`(IN `pCedula` INT, IN `pNombre` VARCHAR(50), IN `pTelefono` VARCHAR(20), IN `pCorreo` VARCHAR(100))
+insert into participantes values(pCedula,pNombre,pTelefono,pCorreo)$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `participantesRead`(IN `pCedula` INT)
+Select cedula,nombre,telefono,correo from participantes where cedula=pCedula$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `participantesReadAll`()
+Select cedula,nombre,telefono,correo from participantes$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tallerRead`(IN `pId` INT)
+Select id,nombre,fecha,lugar,capacidad from taller where id=pId$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tallerReadAll`()
+Select id,nombre,fecha,lugar,capacidad from taller$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `obtenerCupos`(IN `pTaller` INT, OUT `pCupos` INT)
+SELECT COUNT(id) INTO pCupos FROM inscripcion WHERE taller = pTaller$$
+DELIMITER ;
