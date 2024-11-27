@@ -1,17 +1,18 @@
 package Model.Inscripcion;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
  * @author Student
  */
-public class Inscripcion {
-   private int id;
-   private Taller taller;
-   private Participante participante;
-   private LocalDate fecha;
-   private String asistencia;
+public class InscripcionDTO {
+
+    private final int id;
+    private final Taller taller;
+    private final Participante participante;
+    private final Date fecha;
+    private final String asistencia;
 
     public int getId() {
         return id;
@@ -25,7 +26,7 @@ public class Inscripcion {
         return participante;
     }
 
-    public LocalDate getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
@@ -33,13 +34,12 @@ public class Inscripcion {
         return asistencia;
     }
 
-    public Inscripcion(int id, Taller taller, Participante participante, LocalDate fecha, String asistencia) {
+    public InscripcionDTO(int id, Taller taller, Participante participante, Date fecha, String asistencia) {
         this.id = id;
         this.taller = taller;
         this.participante = participante;
         this.fecha = fecha;
         this.asistencia = asistencia;
     }
-   
-   
+    
 }
