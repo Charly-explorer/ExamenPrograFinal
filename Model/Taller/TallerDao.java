@@ -11,21 +11,26 @@ import java.util.ArrayList;
  *
  * @author Student
  */
-public class TallerDao implements Dao<Taller>{
+public class TallerDao implements Dao<Taller> {
 
     @Override
     public boolean crear(Taller objeto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+    }
+
+    @Override
+    public Taller leer(Object objeto)throws SQLException{
+        if (objeto == null){
+            return false;
+        }
+        String query = "Call "
         
     }
 
     @Override
-    public Taller leer(Object objeto) {
+    public ArrayList leerTodo() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public ArrayList leerTodo(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }
