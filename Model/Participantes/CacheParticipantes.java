@@ -12,7 +12,7 @@ import java.util.HashMap;
  *
  * @author Student
  */
-public class CacheParticipantes implements Dao<Participante>{
+public class CacheParticipantes{
     private HashMap<Integer,Participante> list;
 
     public HashMap<Integer, Participante> getList() {
@@ -23,7 +23,6 @@ public class CacheParticipantes implements Dao<Participante>{
         this.list = new HashMap<>();
     }
 
-    @Override
     public boolean crear(Participante objeto) {
         if(objeto == null){
             return false;
@@ -32,16 +31,10 @@ public class CacheParticipantes implements Dao<Participante>{
         return true;
     }
 
-    @Override
     public Participante leer(Object objeto) {
         if(objeto == null){
             return null;
         }
         return list.get(Integer.parseInt(String.valueOf(objeto)));  
-    }
-
-    @Override
-    public ArrayList leerTodo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
