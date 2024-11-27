@@ -8,11 +8,11 @@ package Model.Participantes;
  *
  * @author Student
  */
-public class Participante {
-    private int cedula;
-    private String nombre;
-    private String telefono;
-    private String correo;
+public class ParticipanteDTO {
+    private final int cedula;
+    private final String nombre;
+    private final String telefono;
+    private final String correo;
 
     public int getCedula() {
         return cedula;
@@ -30,15 +30,7 @@ public class Participante {
         return correo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public Participante(int cedula, String nombre, String telefono, String correo) {
+    public ParticipanteDTO(int cedula, String nombre, String telefono, String correo) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
