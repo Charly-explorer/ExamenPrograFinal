@@ -1,7 +1,5 @@
 package Model.Inscripcion;
 
-import Model.Participantes.Participante;
-import Model.Taller.Taller;
 import java.util.Date;
 
 /**
@@ -11,8 +9,8 @@ import java.util.Date;
 public class InscripcionDTO {
 
     private final int id;
-    private final Taller taller;
-    private final Participante participante;
+    private final int taller;
+    private final int participante;
     private final Date fecha;
     private final String asistencia;
 
@@ -20,11 +18,11 @@ public class InscripcionDTO {
         return id;
     }
 
-    public Taller getTaller() {
+    public int getTaller() {
         return taller;
     }
 
-    public Participante getParticipante() {
+    public int getParticipante() {
         return participante;
     }
 
@@ -36,7 +34,7 @@ public class InscripcionDTO {
         return asistencia;
     }
 
-    public InscripcionDTO(int id, Taller taller, Participante participante, Date fecha, String asistencia) {
+    public InscripcionDTO(int id, int taller, int participante, Date fecha, String asistencia) {
         this.id = id;
         this.taller = taller;
         this.participante = participante;
